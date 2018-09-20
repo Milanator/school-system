@@ -12,10 +12,10 @@
             // create 20 products! Bam!
             for ($i = 0; $i < 20; $i++) {
                 $user = new User();
-                $user->setFirstName('firstname '.$i);
-                $user->setLastName('lastname '.$i);
+                $user->setUsername('name'.$i);
                 $user->setEmail('email_'.mt_rand(10, 100).'@school.com');
                 $user->setTeacher(random_int(0,1));
+                $user->setPassword(password_hash( 'root', PASSWORD_BCRYPT));
                 $manager->persist($user);
             }
 

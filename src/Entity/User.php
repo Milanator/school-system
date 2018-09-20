@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -17,19 +18,9 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
-    private $first_name;
-
-    /**
-     * @ORM\Column(type="string", length=70)
-     */
-    private $last_name;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $teacher;
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,47 +28,28 @@ class User
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $teacher;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFirstName(): ?string
+    public function getUsername(): ?string
     {
-        return $this->first_name;
+        return $this->username;
     }
 
-    public function setFirstName(string $first_name): self
+    public function setUsername(string $username): self
     {
-        $this->first_name = $first_name;
-
-        return $this;
-    }
-
-    public function getLastName(): ?string
-    {
-        return $this->last_name;
-    }
-
-    public function setLastName(string $last_name): self
-    {
-        $this->last_name = $last_name;
-
-        return $this;
-    }
-
-    public function getTeacher(): ?bool
-    {
-        return $this->teacher;
-    }
-
-    public function setTeacher(?bool $teacher): self
-    {
-        $this->teacher = $teacher;
+        $this->username = $username;
 
         return $this;
     }
@@ -104,5 +76,56 @@ class User
         $this->password = $password;
 
         return $this;
+    }
+
+    public function getTeacher(): ?bool
+    {
+        return $this->teacher;
+    }
+
+    public function setTeacher(?bool $teacher): self
+    {
+        $this->teacher = $teacher;
+
+        return $this;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+            ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }
