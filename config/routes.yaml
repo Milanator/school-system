@@ -1,7 +1,44 @@
 index:
-    path: /
-    controller: App\Controller\FrontController::index
+    path: /student
+    controller: App\Controller\StudentController::index
 
+teacher:
+    path: /teacher
+    controller: App\Controller\TeacherController::index
+
+## TEACHER
+createExam:
+    path: /create-exam
+    controller: App\Controller\TeacherController::createExam
+
+storeExam:
+    path: /store-exam
+    controller: App\Controller\TeacherController::storeExam
+
+createQuestions:
+    path: /create-questions/{id}
+    controller: App\Controller\TeacherController::createQuestions
+
+storeQuestions:
+    path: /store-questions
+    controller: App\Controller\TeacherController::storeQuestions
+
+## STUDENT
+#### MAIN ACTIVITIES
+exams:
+    path: /exams
+    controller: App\Controller\StudentController::allExams
+
+exam:
+    path: /exam/{id}
+    controller: App\Controller\StudentController::singleExam
+
+categories:
+    path: /categories
+    controller: App\Controller\StudentController::categories
+
+
+#### LOGGING
 login:
     path: /login
     controller: App\Controller\SecurityController::login

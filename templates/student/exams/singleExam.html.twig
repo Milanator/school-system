@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Exam
+            </h1>
+            <div class="jumbotron">
+                <h1 class="display-4">{{ exam.category.name }}</h1>
+                <small>at {{ exam.date|date }}</small>
+                <hr class="my-4">
+                <p>{{ exam.description }}</p>
+                {% if app.user.teacher %}
+                    <a href="{{ path('createQuestions', {id: exam.id} ) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create questions</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

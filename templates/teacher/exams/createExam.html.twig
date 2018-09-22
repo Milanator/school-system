@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Creating exam
+            </h1>
+
+            <form action="{{ path('storeExam') }}" method="POST">
+                <input type="hidden" name="userId" value="{{ app.user.id }}">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Subject:</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="category" required>
+                        <option selected>Choose...</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Exam description:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="examDescription">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Who write exam:</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="students" required>
+                        <option selected>Choose...</option>
+                        <option value="all">All students</option>
+                        {% for student in students %}
+                            <option value="{{ student.id }}">{{ student.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customControlValidation1" name="showExam">
+                    <label class="custom-control-label" for="customControlValidation1">Show exam for students</label>
+                    <div class="invalid-feedback">Example invalid feedback text</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create exam</button>
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+		$(function () {
+			$('#datetimepicker1').datetimepicker();
+		});
+    </script>
+{% endblock %}

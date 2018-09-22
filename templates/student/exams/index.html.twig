@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                List of exams
+            </h1>
+
+            <div class="list-group">
+
+                {% for exam in exams %}
+                    <a href="{{ path('exam', { id: exam.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ exam.category.name }}</h5>
+                            <small>at {{ exam.date|date }}</small>
+                        </div>
+                        <p class="mb-1">{{ exam.description }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

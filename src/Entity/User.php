@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -36,6 +38,22 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $teacher;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Exam", mappedBy="creator", orphanRemoval=true)
+     */
+    private $exams;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ExamQuestion", mappedBy="user", orphanRemoval=true)
+     */
+    private $examQuestions;
+
+    public function __construct()
+    {
+        $this->exams = new ArrayCollection();
+        $this->examQuestions = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -98,7 +116,11 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        if( $this->teacher == 1 ){
+            return array('ROLE_ADMIN');
+        } else{
+            return array('ROLE_USER');
+        }
     }
 
     public function eraseCredentials()
@@ -127,5 +149,67 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
             ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
+    /**
+     * @return Collection|Exam[]
+     */
+    public function getExams(): Collection
+    {
+        return $this->exams;
+    }
+
+    public function addExam(Exam $exam): self
+    {
+        if (!$this->exams->contains($exam)) {
+            $this->exams[] = $exam;
+            $exam->setCreator($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExam(Exam $exam): self
+    {
+        if ($this->exams->contains($exam)) {
+            $this->exams->removeElement($exam);
+            // set the owning side to null (unless already changed)
+            if ($exam->getCreator() === $this) {
+                $exam->setCreator(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ExamQuestion[]
+     */
+    public function getExamQuestions(): Collection
+    {
+        return $this->examQuestions;
+    }
+
+    public function addExamQuestion(ExamQuestion $examQuestion): self
+    {
+        if (!$this->examQuestions->contains($examQuestion)) {
+            $this->examQuestions[] = $examQuestion;
+            $examQuestion->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExamQuestion(ExamQuestion $examQuestion): self
+    {
+        if ($this->examQuestions->contains($examQuestion)) {
+            $this->examQuestions->removeElement($examQuestion);
+            // set the owning side to null (unless already changed)
+            if ($examQuestion->getUser() === $this) {
+                $examQuestion->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
