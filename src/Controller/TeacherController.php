@@ -234,4 +234,65 @@ class TeacherController extends AbstractController
 
         return $this->redirectToRoute('selectQuestions', ['id' => $examId]);
     }
+
+    public function allSubjects() {
+
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findAll();
+
+        return $this->render('student/subjects/index.html.twig',[
+            'subjects' => $categories
+        ]);
+    }
+
+    public function singleSubject($id) {
+
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->find($id);
+
+        return $this->render('student/subjects/singleSubject.html.twig',[
+            'subject' => $category
+        ]);
+    }
+
+    public function updateSubject($id, Request $request) {
+
+        $subject = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->find($id);
+        $entityManager = $this->getDoctrine()->getManager();
+        $data = Request::createFromGlobals()->request;
+
+        $subject->setName($data->get('name'));
+        $subject->setDescription($data->get('description'));
+
+        $entityManager->persist($subject);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('subject',[
+            'id' => $id
+        ]);
+    }
+
+    public function createSubject() {
+
+        return $this->render('student/subjects/createSubject.html.twig');
+    }
+
+    public function storeSubject(Request $request) {
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $data = Request::createFromGlobals()->request;
+
+        $subject = new Category();
+        $subject->setName($data->get('name'));
+        $subject->setDescription($data->get('description'));
+
+        $entityManager->persist($subject);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('subjects');
+    }
 }

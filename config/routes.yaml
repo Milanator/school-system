@@ -55,15 +55,23 @@ exam:
 
 subjects:
     path: /subjects
-    controller: App\Controller\StudentController::allSubjects
+    controller: App\Controller\TeacherController::allSubjects
 
 subject:
     path: /subject/{id}
-    controller: App\Controller\StudentController::singleSubject
+    controller: App\Controller\TeacherController::singleSubject
+
+updateSubject:
+    path: /update-subject/{id}
+    controller: App\Controller\TeacherController::updateSubject
+
+createSubject:
+    path: /create-subject
+    controller: App\Controller\TeacherController::createSubject
 
 storeSubject:
-    path: /store-subject/{id}
-    controller: App\Controller\StudentController::storeSubject
+    path: /store-subject
+    controller: App\Controller\TeacherController::storeSubject
 
 fillExam:
     path: /fill-exam/user/{user}/exam/{exam}

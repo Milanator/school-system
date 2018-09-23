@@ -11,7 +11,7 @@
             <h1 class="heading text-center">
                 Edit subject
             </h1>
-            <form action="{{ path('storeSubject', {id: subject.id}) }}" method="POST">
+            <form action="{{ path('updateSubject', {id: subject.id}) }}" method="POST">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Name</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{ subject.name }}">
