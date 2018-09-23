@@ -2,20 +2,75 @@
 
 namespace App\Controller;
 
+use App\Entity\Answer;
 use App\Entity\Category;
 use App\Entity\Exam;
-use App\Entity\ExamQuestion;
+use App\Entity\Question;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 
 class TeacherController extends AbstractController
 {
 
-    /**
-     * @Route("/teacher", name="teacher")
-     */
+    private function storingQuestions( $data, $entityManager ){
+
+        $data = $data->request;
+        $countAnswers = $data->get('countAnswers');
+        $countQuestions = $data->get('countQuestions');
+        $userId = $data->get('userId');
+        $categoryId = $data->get('categoryId');
+        $user = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($userId);
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->find($categoryId);
+
+        for( $i = 1; $i < $countQuestions; $i++ ){
+
+            $name = $data->get('question'.$i);
+            $correctCount = 0;
+
+            // correct counter
+            for ( $j = 1; $j <= $countAnswers; $j++ ){
+
+                $correctName = 'correct'.$i.$j;
+                if( $data->get($correctName) == 'on' ){
+                    $correctCount++;
+                }
+            }
+
+            // create questions of exam
+            $question = new Question();
+            $question->setCategory($category);
+            $question->setUser($user);
+            $question->setName($name);
+            $question->setCountAnswers($countAnswers);
+            $question->setCountCorrect($correctCount);
+
+            $entityManager->persist($question);
+
+            // create answers of exam questions
+            for ( $j = 1; $j <= $countAnswers; $j++ ){
+
+                $correct = $data->get('correct'.$i.$j) ? 1 : 0;
+                $answerTitle = $data->get('answer'.$i.$j);
+
+                $answer = new Answer();
+                $answer->setQuestion($question);
+                $answer->setName($answerTitle);
+                $answer->setCorrect($correct);
+
+                $entityManager->persist($answer);
+            }
+        }
+
+        $entityManager->flush();
+
+        return $category->getName();
+    }
+
     public function index()
     {
         return $this->render('teacher/index.html.twig', [
@@ -46,6 +101,7 @@ class TeacherController extends AbstractController
         $data = Request::createFromGlobals()->request;
         $categoryId = $data->get('category');
         $userId = $data->get('userId');
+        $intendedFor = $data->get('students') == 'all' ? 0 : $data->get('students');
         $category = $this->getDoctrine()
             ->getRepository(Category::class)
             ->find($categoryId);
@@ -60,6 +116,9 @@ class TeacherController extends AbstractController
         $exam->setActive($data->get('showExam') ? 1 : 0);
         $exam->setCategory($category);
         $exam->setCreator($user);
+        $exam->setCountAnswers(0);
+        $exam->setDone(0);
+        $exam->setIntentedFor($intendedFor);
         $exam->setDate(new \DateTime());
 
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
@@ -71,14 +130,40 @@ class TeacherController extends AbstractController
         return $this->redirectToRoute('exam', [ 'id' => $exam->getId()]);
     }
 
-    public function createQuestions($id) {
+    public function deleteExam($id) {
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $exam = $this->getDoctrine()
+            ->getRepository(Exam::class)
+            ->find($id);
+
+        $entityManager->remove($exam);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('exams');
+    }
+
+    public function questionsList($id) {
 
         $exam = $this->getDoctrine()
             ->getRepository(Exam::class)
             ->find($id);
 
-        return $this->render('teacher/exams/createQuestions.html.twig',[
+        return $this->render('teacher/questions/questionsList.html.twig', [
             'exam' => $exam
+        ]);
+    }
+
+    public function createQuestions($category) {
+
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findOneBy([
+                'name' => $category
+        ]);
+
+        return $this->render('teacher/questions/createQuestions.html.twig',[
+            'category' => $category
         ]);
     }
 
@@ -87,54 +172,64 @@ class TeacherController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $data = Request::createFromGlobals();
 
-        $this->storingQuestions( $data, $entityManager );
+        $categoryName = $this->storingQuestions( $data, $entityManager );
 
-        echo "<pre>";
-        var_dump($data, $data->get('question1'));
-        echo "</pre>";
-        die( 'stop' );
-
-        //return $this->redirectToRoute('singleExam', ['id'=>$exam->getId()]);
+        return $this->redirectToRoute('createQuestions', ['category' => $categoryName]);
     }
 
-    private function storingQuestions( $data, $entityManager ){
+    public function deleteQuestion($id) {
 
-        $data = $data->request;
-        $countAnswers = $data->get('countAnswers');
-        $countQuestions = $data->get('countQuestions');
-        $userId = $data->get('userId');
+        $entityManager = $this->getDoctrine()->getManager();
+        $question = $this->getDoctrine()
+            ->getRepository(Question::class)
+            ->find($id);
+        $exam = $question->getExam();
+
+        $entityManager->remove($question);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('questionsList', [ 'id' => $exam->getId() ]);
+    }
+
+    public function selectQuestions($id) {
+
+        $exam = $this->getDoctrine()
+            ->getRepository(Exam::class)
+            ->find($id);
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->find($exam->getCategory()->getId());
+
+        return $this->render('teacher/exams/selectExamQuestions.html.twig', [
+            'exam' => $exam,
+            'category' => $category
+        ]);
+    }
+
+    public function storeExamQuestions() {
+
+        $data = Request::createFromGlobals()->request;
+        $entityManager = $this->getDoctrine()->getManager();
         $examId = $data->get('examId');
-        $user = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->find($userId);
+        $selectedQuestions = $data->get('selectedQuestions');
         $exam = $this->getDoctrine()
             ->getRepository(Exam::class)
             ->find($examId);
 
-        for( $i = 1; $i < $countQuestions; $i++ ){
+        $exam->removeAllQuestions();
 
-            $name = $data->get('question'.$i);
-            $correctCount = 0;
+        foreach ($selectedQuestions as $questionId){
 
-            for ( $j = 1; $j < $countAnswers; $j++ ){
+            $question = $this->getDoctrine()
+                ->getRepository(Question::class)
+                ->find($questionId);
 
-                $correctName = 'correct'.$i.$j;
-
-                if( $data->get($correctName) == 'on' ){
-                    $correctCount++;
-                }
-            }
-
-            $question = new ExamQuestion();
-            $question->setExam($exam);
-            $question->setUser($user);
-            $question->setName($name);
-            $question->setCountAnswers($countAnswers);
-            $question->setCountCorrect($correctCount);
-
-            $entityManager->persist($question);
+            $exam->addQuestion($question);
+            $entityManager->persist($exam);
         }
 
         $entityManager->flush();
+
+        return $this->redirectToRoute('selectQuestions', ['id' => $examId]);
     }
 }

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block upperJavascript %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid" id="app">
+        <div class="container">
+            <h1 class="heading text-center">
+                Creating questions
+            </h1>
+            <form action="{{ path('storeQuestions') }}" method="POST" class="createQuestion">
+                <input type="hidden" name="userId" value="{{ app.user.id }}">
+                <input type="hidden" name="categoryId" value="{{ category.id }}">
+                <div class="form-group">
+                    <h2 class="heading">{{ category.name }}</h2>
+                    <p class="lead">{{ category.description }}</p>
+                </div>
+                <create-questions></create-questions>
+                <button type="submit" class="btn btn-primary">Save questions</button>
+            </form>
+            <div class="list-group">
+                {% for question in category.questions %}
+                    <li class="list-group-item">
+                        <p class="mb-1">
+                            {{ loop.index }}. {{ question.name }}
+                            <a href="{{ path('deleteQuestion', {id:question.id}) }}" style="float:right">
+                                <span aria-hidden="true">&times;</span>
+                            </a>
+                        </p>
+                        {% for answer in question.answers %}
+                            <p class="mb-1">
+                                {% if answer.correct %}
+                                    <i class="fas fa-check"></i>
+                                {% else %}
+                                    <i class="fas fa-times"></i>
+                                {% endif %}
+                                {{ answer.name }}
+                            </p>
+                        {% endfor %}
+
+                    </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

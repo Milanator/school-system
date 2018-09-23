@@ -12,12 +12,21 @@
                 Exam
             </h1>
             <div class="jumbotron">
+                <a href="{{ path('deleteExam', { id: exam.id }) }}" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
                 <h1 class="display-4">{{ exam.category.name }}</h1>
                 <small>at {{ exam.date|date }}</small>
                 <hr class="my-4">
                 <p>{{ exam.description }}</p>
+                {% if app.user.teacher == 0 and exam.active %}
+                    <a href="{{ path('fillExam', {user: app.user.id, exam: exam.id} ) }}" class="btn btn-warning btn-lg" role="button" aria-pressed="true">Fill exam</a>
+                {% endif %}
                 {% if app.user.teacher %}
-                    <a href="{{ path('createQuestions', {id: exam.id} ) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create questions</a>
+                    <a href="{{ path('selectQuestions', {id: exam.id} ) }}" class="btn btn-primary btn-md" role="button" aria-pressed="true">Select questions</a>
+                    {% if exam.Questions %}
+                        <a href="{{ path('questionsList', {id: exam.id} ) }}" class="btn btn-light btn-md" role="button" aria-pressed="true">Questions List</a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>

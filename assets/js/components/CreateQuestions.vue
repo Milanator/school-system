@@ -22,8 +22,8 @@
 		name: "CreateQuestions",
 		data(){
 			return {
-				countAnswers: 0,
-				countQuestions: 1
+				countAnswers: '',
+				countQuestions: 1,
 			}
 		},
 		methods: {
@@ -60,6 +60,7 @@
 				wrapper.appendChild(wrap);
 				++this.countQuestions;
 			},
+
 		}
 	}
 </script>

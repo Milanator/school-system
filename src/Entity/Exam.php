@@ -56,13 +56,18 @@ class Exam
     private $count_answers;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ExamQuestion", mappedBy="exam", orphanRemoval=true)
+     * @ORM\Column(type="string", length=10)
      */
-    private $examQuestions;
+    private $intented_for;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Question", inversedBy="exams")
+     */
+    private $questions;
 
     public function __construct()
     {
-        $this->examQuestions = new ArrayCollection();
+        $this->questions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -154,31 +159,49 @@ class Exam
         return $this;
     }
 
-    /**
-     * @return Collection|ExamQuestion[]
-     */
-    public function getExamQuestions(): Collection
+    public function getIntentedFor(): ?string
     {
-        return $this->examQuestions;
+        return $this->intented_for;
     }
 
-    public function addExamQuestion(ExamQuestion $examQuestion): self
+    public function setIntentedFor(string $intented_for): self
     {
-        if (!$this->examQuestions->contains($examQuestion)) {
-            $this->examQuestions[] = $examQuestion;
-            $examQuestion->setExam($this);
+        $this->intented_for = $intented_for;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Question[]
+     */
+    public function getQuestions(): Collection {
+
+        return $this->questions;
+    }
+
+    public function addQuestion(Question $question): self {
+
+        if (!$this->questions->contains($question)) {
+            $this->questions[] = $question;
         }
 
         return $this;
     }
 
-    public function removeExamQuestion(ExamQuestion $examQuestion): self
-    {
-        if ($this->examQuestions->contains($examQuestion)) {
-            $this->examQuestions->removeElement($examQuestion);
-            // set the owning side to null (unless already changed)
-            if ($examQuestion->getExam() === $this) {
-                $examQuestion->setExam(null);
+    public function removeQuestion(Question $question): self {
+
+        if ($this->questions->contains($question)) {
+            $this->questions->removeElement($question);
+        }
+
+        return $this;
+    }
+
+    public function removeAllQuestions() {
+
+        foreach ( $this->questions as $question ){
+            if ($this->questions->contains($question)) {
+                $this->questions->removeElement($question);
             }
         }
 

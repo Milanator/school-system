@@ -45,9 +45,9 @@ class User implements UserInterface, \Serializable
     private $exams;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ExamQuestion", mappedBy="user", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Question", mappedBy="user", orphanRemoval=true)
      */
-    private $examQuestions;
+    private $question;
 
     public function __construct()
     {
@@ -183,30 +183,30 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return Collection|ExamQuestion[]
+     * @return Collection|Question[]
      */
-    public function getExamQuestions(): Collection
+    public function getQuestions(): Collection
     {
-        return $this->examQuestions;
+        return $this->question;
     }
 
-    public function addExamQuestion(ExamQuestion $examQuestion): self
+    public function addQuestion(Question $question): self
     {
-        if (!$this->examQuestions->contains($examQuestion)) {
-            $this->examQuestions[] = $examQuestion;
-            $examQuestion->setUser($this);
+        if (!$this->question->contains($question)) {
+            $this->question[] = $question;
+            $question->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeExamQuestion(ExamQuestion $examQuestion): self
+    public function removeQuestion(Question $question): self
     {
-        if ($this->examQuestions->contains($examQuestion)) {
-            $this->examQuestions->removeElement($examQuestion);
+        if ($this->question->contains($question)) {
+            $this->question->removeElement($question);
             // set the owning side to null (unless already changed)
-            if ($examQuestion->getUser() === $this) {
-                $examQuestion->setUser(null);
+            if ($question->getUser() === $this) {
+                $question->setUser(null);
             }
         }
 

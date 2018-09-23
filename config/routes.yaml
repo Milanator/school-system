@@ -15,13 +15,33 @@ storeExam:
     path: /store-exam
     controller: App\Controller\TeacherController::storeExam
 
+deleteExam:
+    path: /delete-exam/{id}
+    controller: App\Controller\TeacherController::deleteExam
+
 createQuestions:
-    path: /create-questions/{id}
+    path: /create-questions/{category}
     controller: App\Controller\TeacherController::createQuestions
+
+selectQuestions:
+    path: /select-questions/exam/{id}
+    controller: App\Controller\TeacherController::selectQuestions
+
+storeExamQuestions:
+    path: /store-exam-questions/{id}
+    controller: App\Controller\TeacherController::storeExamQuestions
 
 storeQuestions:
     path: /store-questions
     controller: App\Controller\TeacherController::storeQuestions
+
+deleteQuestion:
+    path: /delete-question/{id}
+    controller: App\Controller\TeacherController::deleteQuestion
+
+questionsList:
+    path: /questions-list/{id}
+    controller: App\Controller\TeacherController::questionsList
 
 ## STUDENT
 #### MAIN ACTIVITIES
@@ -36,6 +56,10 @@ exam:
 categories:
     path: /categories
     controller: App\Controller\StudentController::categories
+
+fillExam:
+    path: /fill-exam/user/{user}/exam/{exam}
+    controller: App\Controller\StudentController::fillExam
 
 
 #### LOGGING

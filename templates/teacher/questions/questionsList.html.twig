@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid" id="app">
+        <div class="container">
+            <h1 class="heading text-center">
+                List of questions
+            </h1>
+            <h2 class="text-center">
+                {{ exam.category.name|capitalize }}
+            </h2>
+            <p class="text-center">
+                {{ exam.description }}
+            </p>
+            <div class="list-group">
+                {% for question in exam.Questions %}
+                <li class="list-group-item">
+                    <p class="mb-1">
+                        {{ loop.index }}. {{ question.name }}
+                        <a href="{{ path('deleteQuestion', {id:question.id}) }}" style="float:right">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </p>
+                    {% for answer in question.answers %}
+                    <p class="mb-1">
+                        {% if answer.correct %}
+                            <i class="fas fa-check"></i>
+                        {% else %}
+                            <i class="fas fa-times"></i>
+                        {% endif %}
+                        {{ answer.name }}
+                    </p>
+                    {% endfor %}
+
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

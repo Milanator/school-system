@@ -13,6 +13,10 @@ class SecurityController extends AbstractController
     {
         $error = $utils->getLastAuthenticationError();
 
+        $session = $request->getSession();
+
+        $session->invalidate(); //here we can now clear the session.
+
         return $this->render('login.html.twig', [
             'error' => $error,
         ]);

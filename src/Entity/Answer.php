@@ -17,24 +17,58 @@ class Answer
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\ExamQuestion", inversedBy="answers")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Question", inversedBy="answers")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $exam_question;
+    private $question;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $correct;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getExamQuestion(): ?ExamQuestion
+    public function getQuestion(): ?Question
     {
-        return $this->exam_question;
+        return $this->question;
     }
 
-    public function setExamQuestion(?ExamQuestion $exam_question): self
+    public function setQuestion(?Question $question): self
     {
-        $this->exam_question = $exam_question;
+        $this->question = $question;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCorrect(): ?bool
+    {
+        return $this->correct;
+    }
+
+    public function setCorrect(bool $correct): self
+    {
+        $this->correct = $correct;
 
         return $this;
     }

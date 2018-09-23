@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Select questions to exam
+            </h1>
+            <h3>{{ exam.category.name }}</h3>
+            <p>{{ exam.description }}</p>
+            <form action="{{ path('storeExamQuestions', {id: exam.id}) }}" method="POST">
+                <input type="hidden" name="examId" value="{{ exam.id }}">
+                <div class="form-check">
+                    <div class="form-row">
+                        {% for question in category.questions %}
+                        <div class="col-sm-8 order-xl-3" style="margin-bottom:10px">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="selectedQuestions[]" value="{{ question.id }}">
+                                </div>
+                                <input type="text" name="" class="form-control" placeholder="{{ question.name }}" disabled>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top:10px">Save questions</button>
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

@@ -2,24 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c607947-0455-4feb-8212-074180f03743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/components/CreateQuestions.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/student/exams/singleExam.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/teacher/exams/createExam.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/teacher/exams/createQuestions.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/teacher/questions/createQuestions.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/teacher/questions/questionsList.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/CreateQuestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/CreateQuestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teacher/exams/selectExamQuestions.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ExamFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ExamFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Answer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Exam.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Exam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ExamQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180920171143.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180921051925.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180921054134.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180921072230.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180921200409.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180922124444.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180922132233.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180922165605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ExamQuestionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/QuestionRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student/exams/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/exams/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student/exams/singleExam.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student/exams/singleExam.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teacher/exams/createQuestions.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -44,50 +58,55 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="css" value="9" />
           <entry key="dist" value="2" />
           <entry key="env" value="2" />
-          <entry key="js" value="9" />
+          <entry key="js" value="13" />
           <entry key="json" value="5" />
-          <entry key="php" value="54" />
-          <entry key="scss" value="2" />
-          <entry key="twig" value="38" />
-          <entry key="vue" value="1" />
-          <entry key="yaml" value="10" />
+          <entry key="php" value="81" />
+          <entry key="scss" value="5" />
+          <entry key="twig" value="56" />
+          <entry key="vue" value="4" />
+          <entry key="yaml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="9" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="9" />
-          <entry key="PHP" value="54" />
+          <entry key="JavaScript" value="13" />
+          <entry key="PHP" value="81" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="SCSS" value="2" />
-          <entry key="Twig" value="38" />
-          <entry key="Vue.js" value="1" />
-          <entry key="YAML" value="10" />
+          <entry key="SCSS" value="5" />
+          <entry key="Twig" value="56" />
+          <entry key="Vue.js" value="4" />
+          <entry key="YAML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="14" />
           <entry key="env" value="21" />
-          <entry key="js" value="218" />
+          <entry key="js" value="295" />
           <entry key="json" value="7" />
-          <entry key="php" value="2860" />
-          <entry key="twig" value="1870" />
-          <entry key="vue" value="1893" />
-          <entry key="yaml" value="772" />
+          <entry key="php" value="5184" />
+          <entry key="scss" value="37" />
+          <entry key="twig" value="3542" />
+          <entry key="vue" value="2291" />
+          <entry key="yaml" value="1180" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="66" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="218" />
-          <entry key="PHP" value="2860" />
-          <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Twig" value="1870" />
-          <entry key="Vue.js" value="1827" />
-          <entry key="YAML" value="772" />
+          <entry key="JavaScript" value="295" />
+          <entry key="PHP" value="5184" />
+          <entry key="PLAIN_TEXT" value="35" />
+          <entry key="SCSS" value="37" />
+          <entry key="Twig" value="3542" />
+          <entry key="Vue.js" value="2225" />
+          <entry key="YAML" value="1180" />
         </counts>
       </usages-collector>
     </session>
@@ -97,17 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/components/CreateQuestions.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+            <state relative-caret-position="343">
+              <caret line="31" column="68" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -115,29 +125,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TeacherController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-501">
-              <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="60" />
+            <state relative-caret-position="415">
+              <caret line="226" column="42" selection-start-line="226" selection-start-column="42" selection-end-line="226" selection-end-column="42" />
               <folding>
-                <element signature="e#34#58#0#PHP" expanded="true" />
-                <element signature="e#543#1005#0#PHP" />
+                <element signature="e#34#56#0#PHP" expanded="true" />
+                <element signature="e#2234#2393#0#PHP" />
+                <element signature="e#4705#5134#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Entity/ExamQuestion.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Exam.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+            <state relative-caret-position="428">
+              <caret line="201" column="47" selection-start-line="201" selection-start-column="47" selection-end-line="201" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180922132233.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/teacher/exams/selectExamQuestions.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-251" />
+            <state relative-caret-position="359">
+              <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+              <folding>
+                <element signature="e#750#770#0#HTML" expanded="true" />
+                <element signature="e#1410#1433#0#HTML" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -147,6 +164,16 @@
     <findStrings>
       <find>set</find>
       <find>addQuestion</find>
+      <find>ExamQuestions</find>
+      <find>app</find>
+      <find>addEntry</find>
+      <find>$question</find>
+      <find>questiom</find>
+      <find>exam</find>
+      <find>question</find>
+      <find>json</find>
+      <find>questionsList.html.twig</find>
+      <find>examId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,9 +189,7 @@
         <option value="$PROJECT_DIR$/src/Migrations/Version20180920101929.php" />
         <option value="$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/templates/security/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/Controller/FrontController.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/ExamFixtures.php" />
         <option value="$PROJECT_DIR$/templates/front/index.html.twig" />
@@ -177,20 +202,31 @@
         <option value="$PROJECT_DIR$/src/Controller/StudentController.php" />
         <option value="$PROJECT_DIR$/templates/teacher/exams/createExam.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/templates/partials/header.html.twig" />
-        <option value="$PROJECT_DIR$/config/routes.yaml" />
-        <option value="$PROJECT_DIR$/templates/student/exams/singleExam.html.twig" />
         <option value="$PROJECT_DIR$/assets/js/components/createQuestions.vue" />
         <option value="$PROJECT_DIR$/assets/js/components/Questions.vue" />
-        <option value="$PROJECT_DIR$/templates/teacher/exams/createQuestions.html.twig" />
-        <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/assets/scss/style.scss" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/assets/css/app.css" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/Controller/TeacherController.php" />
-        <option value="$PROJECT_DIR$/assets/js/components/CreateQuestions.vue" />
+        <option value="$PROJECT_DIR$/assets/scss/style.scss" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/src/Entity/ExamQuestion.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Answer.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Question.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/templates/teacher/exams/questionsList.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Category.php" />
+        <option value="$PROJECT_DIR$/assets/js/components/CreateQuestions.vue" />
+        <option value="$PROJECT_DIR$/templates/teacher/exams/createQuestions.html.twig" />
+        <option value="$PROJECT_DIR$/templates/partials/header.html.twig" />
+        <option value="$PROJECT_DIR$/templates/student/exams/singleExam.html.twig" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/src/Repository/QuestionRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Exam.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TeacherController.php" />
+        <option value="$PROJECT_DIR$/templates/teacher/exams/selectExamQuestions.html.twig" />
       </list>
     </option>
   </component>
@@ -316,25 +352,32 @@
             <path>
               <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
+              <item name="exams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school-system" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
+              <item name="questions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,7 +387,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="base&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;create&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/createQuestions.html.twig&#10;route&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;tea&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;exam&#9;null&#9;null&#10;scss&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/scss/style.scss&#10;web&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/webpack.config.js&#10;webpa&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/webpack.config.js&#10;app&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;cre&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/createQuestions.html.twig&#10;bas&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;single&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;sing&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;secu&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;user&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/User.php&#10;header&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;index&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/index.html.twig&#10;inde&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;he&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;ind&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;login&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/login.html.twig&#10;admin&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/AdminController.php&#10;cate&#9;null&#9;null&#10;f&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;adm&#9;null&#9;null&#10;rout&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;sec&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;securi&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;appkernel&#9;null&#9;null&#10;fix&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;authe&#9;null&#9;null&#10;fro&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/FrontController.php&#10;securit&#9;null&#9;null&#10;userinte&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="exam&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/Exam.php&#10;questionR&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Repository/QuestionRepository.php&#10;examRe&#9;null&#9;null&#10;crea&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/createQuestions.html.twig&#10;creat&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/js/components/CreateQuestions.vue&#10;rout&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;single&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;head&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;ques&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/questionsList.html.twig&#10;categor&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/Category.php&#10;cate&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/Category.php&#10;vue&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/js/components/CreateQuestions.vue&#10;header&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;secu&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/SecurityController.php&#10;user&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/User.php&#10;que&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/Question.php&#10;exa&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/Exam.php&#10;ex&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/ExamQuestion.php&#10;app&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;base&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;scs&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/scss/style.scss&#10;qu&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/ExamQuestion.php&#10;sing&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;bas&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;web&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/webpack.config.js&#10;quest&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Entity/ExamQuestion.php&#10;ExamQuestions&#9;null&#9;null&#10;serv&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/services.yaml&#10;create&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/createQuestions.html.twig&#10;route&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;tea&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;scss&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/assets/scss/style.scss&#10;webpa&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/webpack.config.js&#10;cre&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/createQuestions.html.twig&#10;index&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/index.html.twig&#10;inde&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;he&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;ind&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;login&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/login.html.twig&#10;admin&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/AdminController.php&#10;f&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;adm&#9;null&#9;null&#10;sec&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;securi&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;appkernel&#9;null&#9;null&#10;fix&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;authe&#9;null&#9;null&#10;fro&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/FrontController.php&#10;securit&#9;null&#9;null&#10;userinte&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -361,6 +404,9 @@
       <recent name="$PROJECT_DIR$/templates/front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/teacher/questions" />
+      <recent name="$PROJECT_DIR$/src/Controller" />
+      <recent name="$PROJECT_DIR$/src/Controller/Teacher" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
@@ -388,22 +434,22 @@
       <option name="presentableId" value="Default" />
       <updated>1537436711697</updated>
       <workItem from="1537436713199" duration="21299000" />
-      <workItem from="1537556926010" duration="26517000" />
+      <workItem from="1537556926010" duration="53477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47816000" />
+    <option name="totallyTimeSpent" value="74776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18901454" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.18901454" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.44192636" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.592068" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -428,66 +474,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env.dist">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/doctrine-bridge/Security/User/UserLoaderInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/security/Http/Authentication/AuthenticationUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180920103146.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180920101929.php" />
-    <entry file="file://$PROJECT_DIR$/config/packages/doctrine_migrations.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/ExamFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-497">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#43#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,6 +507,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding>
+            <element signature="e#43#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -548,24 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/student/exams/singleExam.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -576,33 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/build/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272105">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -614,30 +573,6 @@
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180921204149.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-70" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2084">
-          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#410#432#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180922163440.php">
@@ -655,43 +590,6 @@
         <state relative-caret-position="-173" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Exam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3568" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/components/CreateQuestions.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teacher/exams/createQuestions.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TeacherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-501">
-          <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="60" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-            <element signature="e#543#1005#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180922132233.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-251" />
@@ -702,10 +600,201 @@
         <state relative-caret-position="-252" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ExamQuestion.php">
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        <state relative-caret-position="429">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276091">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/global.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180922165605.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Answer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180923102324.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="34" column="43" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2294">
+          <caret line="185" column="34" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teacher/questions/questionsList.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="114" selection-start-line="27" selection-start-column="114" selection-end-line="27" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/student/exams/singleExam.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="13" column="35" lean-forward="true" selection-end-line="38" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/components/CreateQuestions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teacher/questions/createQuestions.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ExamRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/QuestionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TeacherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="226" column="42" selection-start-line="226" selection-start-column="42" selection-end-line="226" selection-end-column="42" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+            <element signature="e#2234#2393#0#PHP" />
+            <element signature="e#4705#5134#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Exam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="201" column="47" selection-start-line="201" selection-start-column="47" selection-end-line="201" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teacher/exams/selectExamQuestions.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+          <folding>
+            <element signature="e#750#770#0#HTML" expanded="true" />
+            <element signature="e#1410#1433#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

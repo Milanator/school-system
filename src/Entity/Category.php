@@ -33,9 +33,15 @@ class Category
      */
     private $exams;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Question", mappedBy="category", orphanRemoval=true)
+     */
+    private $question;
+
     public function __construct()
     {
         $this->exams = new ArrayCollection();
+        $this->question = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -97,4 +103,36 @@ class Category
 
         return $this;
     }
+
+    /**
+     * @return Collection|Question[]
+     */
+    public function getQuestions(): Collection
+    {
+        return $this->question;
+    }
+
+    public function addQuestion(Question $question): self
+    {
+        if (!$this->question->contains($question)) {
+            $this->question[] = $question;
+            $question->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuestion(Question $question): self
+    {
+        if ($this->question->contains($question)) {
+            $this->question->removeElement($question);
+            // set the owning side to null (unless already changed)
+            if ($question->getCategory() === $this) {
+                $question->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
