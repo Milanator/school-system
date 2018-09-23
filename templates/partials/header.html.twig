@@ -11,14 +11,11 @@
                 <a class="nav-link" href="{{ path('exams') }}">Exams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('categories') }}">Categories</a>
+                <a class="nav-link" href="{{ path('subjects') }}">Subjects</a>
             </li>
             {% else %}
             {% endif %}
             {% if app.user and app.user.teacher == 1 %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('createExam') }}">Create exam</a>
-                </li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,6 +23,16 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ path('createQuestions', {category: 'math'}) }}">Math</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Create exam
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ path('createExam', {category: 'math'}) }}">Math</a>
                         </div>
                     </div>
                 </li>

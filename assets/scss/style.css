@@ -5,9 +5,12 @@
   color: green; }
 
 .fa-times {
-  color: red; }
+  color: #ff0000; }
 
 .createQuestion {
   margin-bottom: 20px; }
+
+.danger {
+  border: 1px solid #ff0000; }
 
 /*# sourceMappingURL=style.css.map */

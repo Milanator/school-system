@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Edit subject
+            </h1>
+            <form action="{{ path('storeSubject', {id: subject.id}) }}" method="POST">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{ subject.name }}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ subject.description }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save subject</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

@@ -8,7 +8,7 @@ teacher:
 
 ## TEACHER
 createExam:
-    path: /create-exam
+    path: /create-exam/{category}
     controller: App\Controller\TeacherController::createExam
 
 storeExam:
@@ -53,9 +53,17 @@ exam:
     path: /exam/{id}
     controller: App\Controller\StudentController::singleExam
 
-categories:
-    path: /categories
-    controller: App\Controller\StudentController::categories
+subjects:
+    path: /subjects
+    controller: App\Controller\StudentController::allSubjects
+
+subject:
+    path: /subject/{id}
+    controller: App\Controller\StudentController::singleSubject
+
+storeSubject:
+    path: /store-subject/{id}
+    controller: App\Controller\StudentController::storeSubject
 
 fillExam:
     path: /fill-exam/user/{user}/exam/{exam}

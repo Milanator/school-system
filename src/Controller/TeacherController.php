@@ -78,11 +78,13 @@ class TeacherController extends AbstractController
         ]);
     }
 
-    public function createExam() {
+    public function createExam($category) {
 
-        $categories = $this->getDoctrine()
+        $category = $this->getDoctrine()
             ->getRepository(Category::class)
-            ->findAll();
+            ->findOneBy([
+                'name' => $category
+            ]);
 
         $students = $this->getDoctrine()
             ->getRepository(User::class)
@@ -91,7 +93,7 @@ class TeacherController extends AbstractController
             ]);
 
         return $this->render('teacher/exams/createExam.html.twig', [
-            'categories' => $categories,
+            'category' => $category,
             'students' => $students
         ]);
     }
@@ -99,7 +101,7 @@ class TeacherController extends AbstractController
     public function storeExam(Request $request) {
 
         $data = Request::createFromGlobals()->request;
-        $categoryId = $data->get('category');
+        $categoryId = $data->get('categoryId');
         $userId = $data->get('userId');
         $intendedFor = $data->get('students') == 'all' ? 0 : $data->get('students');
         $category = $this->getDoctrine()

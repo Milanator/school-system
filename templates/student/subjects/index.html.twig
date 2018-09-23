@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                List of subjects
+            </h1>
+
+            <div class="list-group">
+
+                {% for subject in subjects %}
+                    <a href="{{ path('subject', { id: subject.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ subject.name }}</h5>
+                        </div>
+                        <p class="mb-1">{{ subject.description }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

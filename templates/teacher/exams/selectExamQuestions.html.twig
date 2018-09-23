@@ -6,22 +6,24 @@
 
 {% block body %}
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="app">
         <div class="container">
             <h1 class="heading text-center">
                 Select questions to exam
             </h1>
             <h3>{{ exam.category.name }}</h3>
             <p>{{ exam.description }}</p>
+            <select-questions></select-questions>
             <form action="{{ path('storeExamQuestions', {id: exam.id}) }}" method="POST">
                 <input type="hidden" name="examId" value="{{ exam.id }}">
                 <div class="form-check">
                     <div class="form-row">
                         {% for question in category.questions %}
-                        <div class="col-sm-8 order-xl-3" style="margin-bottom:10px">
+                        <div class="col-sm-8 order-xl-3 question" style="margin-bottom:10px">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <input type="checkbox" aria-label="Checkbox for following text input" name="selectedQuestions[]" value="{{ question.id }}">
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="selectedQuestions[]" value="{{ question.id }}"
+                                    {% if exam.questions.contains(question) %} checked {% endif %}>
                                 </div>
                                 <input type="text" name="" class="form-control" placeholder="{{ question.name }}" disabled>
                             </div>
@@ -29,7 +31,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin-top:10px">Save questions</button>
+                <button type="submit" class="btn btn-primary saveQuestion" style="margin-top:10px">Save questions</button>
             </form>
         </div>
     </div>
@@ -38,4 +40,5 @@
 
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+{% endblock %}
