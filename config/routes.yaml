@@ -1,4 +1,8 @@
 index:
+    path: /
+    controller: App\Controller\SecurityController::index
+
+student:
     path: /student
     controller: App\Controller\StudentController::index
 
@@ -8,74 +12,91 @@ teacher:
 
 ## TEACHER
 createExam:
-    path: /create-exam/{category}
+    path: /teacher/exam/create/{category}
     controller: App\Controller\TeacherController::createExam
 
 storeExam:
-    path: /store-exam
+    path: /teacher/exam/store
     controller: App\Controller\TeacherController::storeExam
 
 deleteExam:
-    path: /delete-exam/{id}
+    path: /teacher/exam/delete/{id}
     controller: App\Controller\TeacherController::deleteExam
 
+showExam:
+    path: /teacher/exam/show/{id}
+    controller: App\Controller\TeacherController::showExam
+
 createQuestions:
-    path: /create-questions/{category}
+    path: /teacher/question/create/{category}
     controller: App\Controller\TeacherController::createQuestions
 
-selectQuestions:
-    path: /select-questions/exam/{id}
-    controller: App\Controller\TeacherController::selectQuestions
+selectExamQuestions:
+    path: /teacher/question/select/exam/{id}
+    controller: App\Controller\TeacherController::selectExamQuestions
 
 storeExamQuestions:
-    path: /store-exam-questions/{id}
+    path: /teacher/exam-question/store/{id}
     controller: App\Controller\TeacherController::storeExamQuestions
 
 storeQuestions:
-    path: /store-questions
+    path: /teacher/question/store
     controller: App\Controller\TeacherController::storeQuestions
 
 deleteQuestion:
-    path: /delete-question/{id}
+    path: /teacher/question/delete/{questionId}
     controller: App\Controller\TeacherController::deleteQuestion
 
+deleteExamQuestion:
+    path: /teacher/exam/{examId}/question/{questionId}/delete
+    controller: App\Controller\TeacherController::deleteExamQuestion
+
 questionsList:
-    path: /questions-list/{id}
+    path: /teacher/exam/questions/{id}
     controller: App\Controller\TeacherController::questionsList
+
+createSubject:
+    path: /teacher/subject/create
+    controller: App\Controller\TeacherController::createSubject
+
+subject:
+    path: /teacher/subject/{id}
+    controller: App\Controller\TeacherController::singleSubject
+
+updateSubject:
+    path: /teacher/subject/update/{id}
+    controller: App\Controller\TeacherController::updateSubject
+
+storeSubject:
+    path: /teacher/subject/store
+    controller: App\Controller\TeacherController::storeSubject
 
 ## STUDENT
 #### MAIN ACTIVITIES
-exams:
-    path: /exams
-    controller: App\Controller\StudentController::allExams
-
-exam:
-    path: /exam/{id}
-    controller: App\Controller\StudentController::singleExam
-
 subjects:
     path: /subjects
     controller: App\Controller\TeacherController::allSubjects
 
-subject:
-    path: /subject/{id}
-    controller: App\Controller\TeacherController::singleSubject
-
-updateSubject:
-    path: /update-subject/{id}
-    controller: App\Controller\TeacherController::updateSubject
-
-createSubject:
-    path: /create-subject
-    controller: App\Controller\TeacherController::createSubject
-
-storeSubject:
-    path: /store-subject
-    controller: App\Controller\TeacherController::storeSubject
-
 fillExam:
-    path: /fill-exam/user/{user}/exam/{exam}
+    path: /exam/fill/{examId}/user/{userId}
     controller: App\Controller\StudentController::fillExam
+
+storeExamResults:
+    path: /exam/store/{examId}
+    controller: App\Controller\StudentController::storeExamResults
+
+checkResult:
+    path: /exam/show/results/{examId}
+    controller: App\Controller\StudentController::checkResult
+
+## COMONN
+exams:
+    path: /exams
+    controller: App\Controller\CommonController::allExams
+
+exam:
+    path: /exam/{id}
+    controller: App\Controller\CommonController::singleExam
 
 
 #### LOGGING

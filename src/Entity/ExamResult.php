@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AnswerRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ExamResultRepository")
  */
-class Answer
+class ExamResult
 {
     /**
      * @ORM\Id()
@@ -19,23 +19,34 @@ class Answer
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Question", inversedBy="answers")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="examResults")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $question;
+    private $user;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Exam", inversedBy="examResults")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $name;
+    private $exam;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="float")
+     */
+    private $percentage;
+
+    /**
+     * @ORM\Column(type="integer")
      */
     private $correct;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\QuestionResult", mappedBy="answer", orphanRemoval=true)
+     * @ORM\Column(type="integer")
+     */
+    private $incorrect;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\QuestionResult", mappedBy="exam_result")
      */
     private $questionResults;
 
@@ -49,38 +60,62 @@ class Answer
         return $this->id;
     }
 
-    public function getQuestion(): ?Question
+    public function getUser(): ?User
     {
-        return $this->question;
+        return $this->user;
     }
 
-    public function setQuestion(?Question $question): self
+    public function setUser(?User $user): self
     {
-        $this->question = $question;
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getName(): ?string
+    public function getExam(): ?Exam
     {
-        return $this->name;
+        return $this->exam;
     }
 
-    public function setName(string $name): self
+    public function setExam(?Exam $exam): self
     {
-        $this->name = $name;
+        $this->exam = $exam;
 
         return $this;
     }
 
-    public function getCorrect(): ?bool
+    public function getPercentage(): ?int
+    {
+        return $this->percentage;
+    }
+
+    public function setPercentage(int $percentage): self
+    {
+        $this->percentage = $percentage;
+
+        return $this;
+    }
+
+    public function getCorrect(): ?int
     {
         return $this->correct;
     }
 
-    public function setCorrect(bool $correct): self
+    public function setCorrect(int $correct): self
     {
         $this->correct = $correct;
+
+        return $this;
+    }
+
+    public function getIncorrect(): ?int
+    {
+        return $this->incorrect;
+    }
+
+    public function setIncorrect(int $incorrect): self
+    {
+        $this->incorrect = $incorrect;
 
         return $this;
     }
@@ -97,7 +132,7 @@ class Answer
     {
         if (!$this->questionResults->contains($questionResult)) {
             $this->questionResults[] = $questionResult;
-            $questionResult->setAnswer($this);
+            $questionResult->setExamResult($this);
         }
 
         return $this;
@@ -108,8 +143,8 @@ class Answer
         if ($this->questionResults->contains($questionResult)) {
             $this->questionResults->removeElement($questionResult);
             // set the owning side to null (unless already changed)
-            if ($questionResult->getAnswer() === $this) {
-                $questionResult->setAnswer(null);
+            if ($questionResult->getExamResult() === $this) {
+                $questionResult->setExamResult(null);
             }
         }
 

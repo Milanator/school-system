@@ -18,7 +18,7 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login
-                default_target_path: /teacher
+                default_target_path: /
                 provider: my_provider
 
             logout:

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Fill exam
+            </h1>
+            <p class="text-center">The student can have only one point from the question. </p>
+            <div class="jumbotron">
+                <form action="{{ path('storeExamResults', { examId: exam.id }) }}" method="POST">
+                    <div class="form-group">
+                        {% for question in exam.questions %}
+                            <!-- Default checked -->
+                            <h3>{{ question.name }}</h3>
+                            <div class="form-row">
+                                {% for answer in question.answers %}
+                                <div class="input-group mb-3 col-6">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" aria-label="Checkbox for following text input" name="question{{ question.id }}" value="{{ answer.id }}">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with checkbox" value="{{ answer.name }}" readonly>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

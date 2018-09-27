@@ -29,7 +29,7 @@
                     <li class="list-group-item">
                         <p class="mb-1">
                             {{ loop.index }}. {{ question.name }}
-                            <a href="{{ path('deleteQuestion', {id:question.id}) }}" style="float:right">
+                            <a href="{{ path('deleteQuestion', {questionId:question.id}) }}" style="float:right">
                                 <span aria-hidden="true">&times;</span>
                             </a>
                         </p>

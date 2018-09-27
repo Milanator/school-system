@@ -2,7 +2,6 @@
     namespace App\DataFixtures;
 
     use App\Entity\Category;
-    use App\Entity\Exam;
     use App\Entity\User;
     use Doctrine\Bundle\FixturesBundle\Fixture;
     use Doctrine\Common\DataFixtures\OrderedFixtureInterface;

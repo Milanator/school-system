@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Exam;
+use App\Entity\ExamResult;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Exam|null find($id, $lockMode = null, $lockVersion = null)
- * @method Exam|null findOneBy(array $criteria, array $orderBy = null)
- * @method Exam[]    findAll()
- * @method Exam[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ExamResult|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ExamResult|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ExamResult[]    findAll()
+ * @method ExamResult[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ExamRepository extends ServiceEntityRepository
+class ExamResultRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Exam::class);
+        parent::__construct($registry, ExamResult::class);
     }
 
 //    /**
-//     * @return Exam[] Returns an array of Exam objects
+//     * @return ExamResult[] Returns an array of ExamResult objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ExamRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Exam
+    public function findOneBySomeField($value): ?ExamResult
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.exampleField = :val')
@@ -50,18 +50,15 @@ class ExamRepository extends ServiceEntityRepository
 
     /**
      * @param $userId
-     * @return Exam[]
+     * @return boolean
      */
-    public function findAllStudentExams($userId): array
+    public function isDoneExam($userId): array
     {
         $qb = $this->createQueryBuilder('p')
-            ->where('p.active = :param1 AND p.intented_for = :param2')
-            ->orWhere('p.active = :param1 AND p.intented_for = :userId')
-            ->setParameter('param1', 1)
-            ->setParameter('param2', 0)
+            ->where('p.user_id = :userId')
             ->setParameter('userId', $userId)
             ->getQuery();
 
-        return $qb->execute();
+        return $qb->execute() ? true : false;
     }
 }

@@ -8,16 +8,16 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20180923105851 extends AbstractMigration
+final class Version20180927182134 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('CREATE TABLE exam_question (exam_id INT NOT NULL, question_id INT NOT NULL, INDEX IDX_F593067D578D5E91 (exam_id), INDEX IDX_F593067D1E27F6BF (question_id), PRIMARY KEY(exam_id, question_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
-        $this->addSql('ALTER TABLE exam_question ADD CONSTRAINT FK_F593067D578D5E91 FOREIGN KEY (exam_id) REFERENCES exam (id) ON DELETE CASCADE');
-        $this->addSql('ALTER TABLE exam_question ADD CONSTRAINT FK_F593067D1E27F6BF FOREIGN KEY (question_id) REFERENCES question (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE question_result ADD answer_id INT NOT NULL');
+        $this->addSql('ALTER TABLE question_result ADD CONSTRAINT FK_1437EE1BAA334807 FOREIGN KEY (answer_id) REFERENCES answer (id)');
+        $this->addSql('CREATE INDEX IDX_1437EE1BAA334807 ON question_result (answer_id)');
     }
 
     public function down(Schema $schema) : void
@@ -25,6 +25,8 @@ final class Version20180923105851 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP TABLE exam_question');
+        $this->addSql('ALTER TABLE question_result DROP FOREIGN KEY FK_1437EE1BAA334807');
+        $this->addSql('DROP INDEX IDX_1437EE1BAA334807 ON question_result');
+        $this->addSql('ALTER TABLE question_result DROP answer_id');
     }
 }

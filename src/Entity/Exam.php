@@ -65,9 +65,15 @@ class Exam
      */
     private $questions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ExamResult", mappedBy="exam", orphanRemoval=true)
+     */
+    private $examResults;
+
     public function __construct()
     {
         $this->questions = new ArrayCollection();
+        $this->examResults = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -202,6 +208,37 @@ class Exam
         foreach ( $this->questions as $question ){
             if ($this->questions->contains($question)) {
                 $this->questions->removeElement($question);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ExamResult[]
+     */
+    public function getExamResults(): Collection
+    {
+        return $this->examResults;
+    }
+
+    public function addExamResult(ExamResult $examResult): self
+    {
+        if (!$this->examResults->contains($examResult)) {
+            $this->examResults[] = $examResult;
+            $examResult->setExam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExamResult(ExamResult $examResult): self
+    {
+        if ($this->examResults->contains($examResult)) {
+            $this->examResults->removeElement($examResult);
+            // set the owning side to null (unless already changed)
+            if ($examResult->getExam() === $this) {
+                $examResult->setExam(null);
             }
         }
 

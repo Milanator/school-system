@@ -22,7 +22,9 @@
                             Create exam
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ path('createExam', {category: 'math'}) }}">Math</a>
+                            {% for subject in subjects %}
+                            <a class="dropdown-item" href="{{ path('createExam', {category: subject.name }) }}">{{ subject.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </li>
@@ -32,7 +34,9 @@
                             Create questions
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ path('createQuestions', {category: 'math'}) }}">Math</a>
+                            {% for subject in subjects %}
+                            <a class="dropdown-item nav-link" href="{{ path('createQuestions', {category: subject.name }) }}">{{ subject.name|capitalize }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </li>

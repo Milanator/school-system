@@ -49,10 +49,15 @@ class User implements UserInterface, \Serializable
      */
     private $question;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ExamResult", mappedBy="user", orphanRemoval=true)
+     */
+    private $examResults;
+
     public function __construct()
     {
         $this->exams = new ArrayCollection();
-        $this->examQuestions = new ArrayCollection();
+        $this->examResults = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -207,6 +212,37 @@ class User implements UserInterface, \Serializable
             // set the owning side to null (unless already changed)
             if ($question->getUser() === $this) {
                 $question->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ExamResult[]
+     */
+    public function getExamResults(): Collection
+    {
+        return $this->examResults;
+    }
+
+    public function addExamResult(ExamResult $examResult): self
+    {
+        if (!$this->examResults->contains($examResult)) {
+            $this->examResults[] = $examResult;
+            $examResult->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExamResult(ExamResult $examResult): self
+    {
+        if ($this->examResults->contains($examResult)) {
+            $this->examResults->removeElement($examResult);
+            // set the owning side to null (unless already changed)
+            if ($examResult->getUser() === $this) {
+                $examResult->setUser(null);
             }
         }
 

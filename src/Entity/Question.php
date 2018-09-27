@@ -50,15 +50,18 @@ class Question
      */
     private $category;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Question", mappedBy="exams")
-     */
     private $exams;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\QuestionResult", mappedBy="question")
+     */
+    private $questionResults;
 
     public function __construct()
     {
         $this->answers = new ArrayCollection();
         $this->exams = new ArrayCollection();
+        $this->questionResults = new ArrayCollection();
     }
 
 
@@ -165,22 +168,64 @@ class Question
 
         return $this->exams;
     }
+
     public function addExam(Exam $exam): self {
 
         if (!$this->exams->contains($exam)) {
             $this->exams[] = $exam;
-            $exam->addTag($this);
         }
 
         return $this;
     }
+
     public function removeExam(Exam $exam): self {
 
         if ($this->exams->contains($exam)) {
             $this->exams->removeElement($exam);
-            $exam->removeTag($this);
         }
 
         return $this;
     }
+
+    public function removeAllExams() {
+
+        foreach ( $this->exams as $exam ){
+            if ($this->exams->contains($exam)) {
+                $this->exams->removeElement($exam);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * @return Collection|QuestionResult[]
+     */
+    public function getQuestionResults(): Collection
+    {
+        return $this->questionResults;
+    }
+
+    public function addQuestionResult(QuestionResult $questionResult): self
+    {
+        if (!$this->questionResults->contains($questionResult)) {
+            $this->questionResults[] = $questionResult;
+            $questionResult->setQuestion($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuestionResult(QuestionResult $questionResult): self
+    {
+        if ($this->questionResults->contains($questionResult)) {
+            $this->questionResults->removeElement($questionResult);
+            // set the owning side to null (unless already changed)
+            if ($questionResult->getQuestion() === $this) {
+                $questionResult->setQuestion(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
