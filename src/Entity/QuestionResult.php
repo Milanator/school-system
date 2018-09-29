@@ -38,6 +38,8 @@ class QuestionResult
      */
     private $point;
 
+
+
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Answer", inversedBy="questionResults")
      * @ORM\JoinColumn(nullable=false)

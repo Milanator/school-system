@@ -12,20 +12,24 @@
                 Exam
             </h1>
             <div class="jumbotron">
+
                 {% if app.user.teacher %}
                 <a href="{{ path('deleteExam', { id: exam.id }) }}" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </a>
                 {% endif %}
+
                 <h1 class="display-4">{{ exam.category.name }}</h1>
                 <small>at {{ exam.date|date }}</small>
                 <hr class="my-4">
                 <p>{{ exam.description }}</p>
+
                 {% if examIsDone %}
-                    <a href="{{ path('checkResult', {examId: exam.id}) }}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Check exam results</a>
+                    <a href="{{ path('checkResult', {examId: exam.id, userId: app.user.id}) }}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Check exam results</a>
                 {% elseif app.user.teacher == 0 and exam.active and (exam.intentedFor == 0 or exam.intentedFor == app.user.id )  %}
                     <a href="{{ path('fillExam', {userId: app.user.id, examId: exam.id} ) }}" class="btn btn-warning btn-lg" role="button" aria-pressed="true">Fill exam</a>
                 {% endif %}
+
                 {% if app.user.teacher %}
                     <a href="{{ path('selectExamQuestions', {id: exam.id} ) }}" class="btn btn-primary btn-md" role="button" aria-pressed="true">Select questions</a>
                     {% if exam.Questions %}
@@ -36,7 +40,11 @@
                     {% else %}
                         <a href="{{ path('showExam', {id: exam.id} ) }}" class="btn btn-warning btn-md" role="button" aria-pressed="true">Hidden Exam</a>
                     {% endif %}
+                    {% if exam.examResults %}
+                        <a href="{{ path('studentsResults', {id: exam.id} ) }}" class="btn btn-dark btn-md" role="button" aria-pressed="true">Students results</a>
+                    {% endif %}
                 {% endif %}
+
             </div>
         </div>
     </div>

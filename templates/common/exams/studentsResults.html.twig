@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Students, which wrote exam
+            </h1>
+            <p class="text-center"><strong>{{ exam.category.name }}:</strong> {{ exam.description }}</p>
+            <div class="list-group">
+
+                {% for result in examResults %}
+                    <a href="{{ path('checkResult', { examId: result.exam.id, userId: result.user.id })  }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ result.user.username }}</h5>
+                            <strong>{{ result.correct }}/{{ result.correct+result.incorrect }} - {{ result.percentage }}%</strong>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

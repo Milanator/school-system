@@ -122,8 +122,4 @@ class StudentController extends AbstractController
         return $this->redirectToRoute('exam', ['id' => $examId]);
     }
 
-    public function checkResult($examId) {
-
-    }
-
 }

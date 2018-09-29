@@ -2,15 +2,11 @@ index:
     path: /
     controller: App\Controller\SecurityController::index
 
-student:
-    path: /student
-    controller: App\Controller\StudentController::index
-
+## TEACHER
 teacher:
     path: /teacher
     controller: App\Controller\TeacherController::index
 
-## TEACHER
 createExam:
     path: /teacher/exam/create/{category}
     controller: App\Controller\TeacherController::createExam
@@ -23,6 +19,10 @@ deleteExam:
     path: /teacher/exam/delete/{id}
     controller: App\Controller\TeacherController::deleteExam
 
+studentsResults:
+    path: /exam/results/{id}
+    controller: App\Controller\TeacherController::studentsResults
+
 showExam:
     path: /teacher/exam/show/{id}
     controller: App\Controller\TeacherController::showExam
@@ -32,11 +32,11 @@ createQuestions:
     controller: App\Controller\TeacherController::createQuestions
 
 selectExamQuestions:
-    path: /teacher/question/select/exam/{id}
+    path: /teacher/exam/{id}/select/question
     controller: App\Controller\TeacherController::selectExamQuestions
 
 storeExamQuestions:
-    path: /teacher/exam-question/store/{id}
+    path: /teacher/exam/{id}/question/store/
     controller: App\Controller\TeacherController::storeExamQuestions
 
 storeQuestions:
@@ -64,7 +64,7 @@ subject:
     controller: App\Controller\TeacherController::singleSubject
 
 updateSubject:
-    path: /teacher/subject/update/{id}
+    path: /teacher/subject/{id}/update
     controller: App\Controller\TeacherController::updateSubject
 
 storeSubject:
@@ -73,21 +73,21 @@ storeSubject:
 
 ## STUDENT
 #### MAIN ACTIVITIES
+student:
+    path: /student
+    controller: App\Controller\StudentController::index
+
 subjects:
     path: /subjects
     controller: App\Controller\TeacherController::allSubjects
 
 fillExam:
-    path: /exam/fill/{examId}/user/{userId}
+    path: /exam/{examId}/fill/user/{userId}
     controller: App\Controller\StudentController::fillExam
 
 storeExamResults:
-    path: /exam/store/{examId}
+    path: /exam/{examId}/store
     controller: App\Controller\StudentController::storeExamResults
-
-checkResult:
-    path: /exam/show/results/{examId}
-    controller: App\Controller\StudentController::checkResult
 
 ## COMONN
 exams:
@@ -97,6 +97,10 @@ exams:
 exam:
     path: /exam/{id}
     controller: App\Controller\CommonController::singleExam
+
+checkResult:
+    path: /exam/{examId}/show/results/user/{userId}
+    controller: App\Controller\CommonController::checkResult
 
 
 #### LOGGING

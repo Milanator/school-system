@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="heading text-center">
+                Show result from exam
+            </h1>
+            <p class="text-center">{{ exam.description }}</p>
+            <div class="jumbotron">
+
+                <p>Percentage: {{ studentsExam.percentage }}%</p>
+                <p>Correct: {{ studentsExam.correct }} question/s</p>
+                <p>Incorrect: {{ studentsExam.incorrect }} question/s</p>
+                <div class="form-group">
+                    {% for question in exam.questions %}
+                        <!-- Default checked -->
+                        <h3>{{ question.name }}</h3>
+                        <div class="form-row">
+                            {% for answer in question.answers %}
+                                <div class="input-group mb-3 col-6">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            {% if answer.correct %}
+                                            <i class="fas fa-check"></i>
+                                            {% else %}
+                                            <i class="fas fa-times"></i>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with checkbox" value="{{ answer.name }}" readonly>
+                                    {% if studentsExam.questionResults[loop.parent.loop.index0].answer.id == answer.id ? 1 : 0 %}
+                                        <div class="input-group-text">
+                                            <i class="fas fa-highlighter"></i>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

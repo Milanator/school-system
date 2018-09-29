@@ -13,10 +13,18 @@ $mb20: 20px;
     color: $danger;
 }
 
+.fa-highlighter{
+    color: cornflowerblue;
+}
+
 .createQuestion{
     margin-bottom: $mb20;
 }
 
 .danger{
     border: 1px solid $danger;
+}
+
+.green{
+    color: green;
 }

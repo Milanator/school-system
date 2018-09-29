@@ -62,4 +62,26 @@ class CommonController extends AbstractController
         ]);
     }
 
+    public function checkResult($examId, $userId) {
+
+        $exam = $this->getDoctrine()
+            ->getRepository(Exam::class)
+            ->find($examId);
+        $studentsExam = $this->getDoctrine()
+            ->getRepository(ExamResult::class)
+            ->findOneBy([
+                'exam' => $exam->getId(),
+                'user' => $userId
+            ]);
+
+        if( ! $studentsExam || ($userId != $this->getUser()->getId() && $this->getUser()->getTeacher() != 1 ) ){
+            return new Response('Didnt fill exam. ', 404);
+        }
+
+        return $this->render('common/exams/viewResults.html.twig', [
+            'exam' => $exam,
+            'studentsExam' => $studentsExam
+        ]);
+    }
+
 }

@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Answer;
 use App\Entity\Category;
 use App\Entity\Exam;
+use App\Entity\ExamResult;
 use App\Entity\Question;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class TeacherController extends AbstractController {
 
@@ -325,5 +327,24 @@ class TeacherController extends AbstractController {
         $entityManager->flush();
 
         return $this->redirectToRoute('exam', ['id' => $exam->getId()]);
+    }
+
+    public function studentsResults($id) {
+
+        $exam          = $this->getDoctrine()
+            ->getRepository(Exam::class)
+            ->find($id);
+
+        $examResults = $this->getDoctrine()
+            ->getRepository(ExamResult::class)
+            ->findBy([
+                'exam' => $exam->getId()
+            ]);
+
+
+        return $this->render('common/exams/studentsResults.html.twig', [
+            'exam' => $exam,
+            'examResults' => $examResults
+        ]);
     }
 }
