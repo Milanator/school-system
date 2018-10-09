@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c607947-0455-4feb-8212-074180f03743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/common/exams/studentsResults.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/common/exams/viewResults.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CommonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/QuestionResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/QuestionResult.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/exams/singleExam.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/exams/singleExam.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/exams/viewResults.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/exams/viewResults.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,52 +105,57 @@
     <session id="-744023268">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="12" />
+          <entry key="env" value="21" />
           <entry key="php" value="3691" />
           <entry key="scss" value="50" />
-          <entry key="twig" value="1753" />
+          <entry key="twig" value="1869" />
           <entry key="yaml" value="329" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PHP" value="3691" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="PLAIN_TEXT" value="33" />
           <entry key="SCSS" value="50" />
-          <entry key="Twig" value="1753" />
+          <entry key="Twig" value="1869" />
           <entry key="YAML" value="329" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="js" value="3" />
-          <entry key="php" value="66" />
+          <entry key="json" value="1" />
+          <entry key="php" value="67" />
           <entry key="scss" value="3" />
-          <entry key="twig" value="22" />
+          <entry key="twig" value="26" />
           <entry key="vue" value="3" />
           <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="JSON" value="1" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="66" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PHP" value="67" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="3" />
-          <entry key="Twig" value="22" />
+          <entry key="Twig" value="26" />
           <entry key="Vue.js" value="3" />
           <entry key="YAML" value="4" />
         </counts>
@@ -165,42 +163,48 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="11" selection-start-line="100" selection-end-line="100" selection-end-column="11" />
+            <state relative-caret-position="276">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CommonController.php">
+        <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
-              <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Exam.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+            <state relative-caret-position="345">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+        <entry file="file://$PROJECT_DIR$/templates/common/exams/viewResults.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="169">
+              <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="115" column="28" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -247,7 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/login.html.twig" />
         <option value="$PROJECT_DIR$/assets/js/components/createQuestions.vue" />
         <option value="$PROJECT_DIR$/assets/js/components/Questions.vue" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -282,7 +285,6 @@
         <option value="$PROJECT_DIR$/templates/mutual/exams/allExams.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/MutualController.php" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/ExamResult.php" />
         <option value="$PROJECT_DIR$/templates/student/exams/fillExam.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/ExamRepository.php" />
@@ -295,9 +297,11 @@
         <option value="$PROJECT_DIR$/src/Controller/StudentController.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/CommonController.php" />
-        <option value="$PROJECT_DIR$/templates/common/exams/viewResults.html.twig" />
         <option value="$PROJECT_DIR$/templates/common/exams/studentsResults.html.twig" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/templates/partials/header.html.twig" />
+        <option value="$PROJECT_DIR$/templates/common/exams/viewResults.html.twig" />
       </list>
     </option>
   </component>
@@ -421,24 +425,6 @@
               <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-system" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-system" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="exams" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -446,7 +432,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="appke&#9;null&#9;null&#10;secu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;exam&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/Exam.php&#10;head&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;resul&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/studentsResults.html.twig&#10;viewResults&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/viewResults.html.twig&#10;comm&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/CommonController.php&#10;studen&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;stud&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/studentsResults.html.twig&#10;scss&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/scss/style.scss&#10;te&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;view&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/viewResults.html.twig&#10;sing&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/singleExam.html.twig&#10;tea&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;singl&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/singleExam.html.twig&#10;exa&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/ExamResult.php&#10;que&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/QuestionResult.php&#10;fill&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/fillExam.html.twig&#10;examRe&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;stu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;examre&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;examres&#9;null&#9;null&#10;re&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/ExamResult.php&#10;teach&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;vue&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/components/CreateQuestions.vue&#10;sele&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/components/SelectQuestions.vue&#10;app&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;ap.&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;bas&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;mutu&#9;null&#9;null&#10;repos&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;user&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/User.php&#10;securi&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;stude&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;index&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;single&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;route&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;question&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/Question.php&#10;fixtu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;SecurityController&#9;FILE&#9;file:///Volumes/Blsty/Milan/documents/Programovanie/www/school-system/src/Controller/SecurityController.php&#10;he&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;createSubject&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/subjects/createSubject.html.twig&#10;create&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/createQuestions.html.twig&#10;list&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/questionsList.html.twig&#10;base&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;teac&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;header&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;st&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;createQ&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/createQuestions.html.twig&#10;createExam&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/exams/createExam.html.twig" />
+    <property name="SearchEverywhereHistoryKey" value="res&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/viewResults.html.twig&#10;resul&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/studentsResults.html.twig&#10;user&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/User.php&#10;heade&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;base&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;appke&#9;null&#9;null&#10;secu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;exam&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/Exam.php&#10;head&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;viewResults&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/viewResults.html.twig&#10;comm&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/CommonController.php&#10;studen&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;stud&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/studentsResults.html.twig&#10;scss&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/scss/style.scss&#10;te&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;view&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/viewResults.html.twig&#10;sing&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/singleExam.html.twig&#10;tea&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;singl&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/common/exams/singleExam.html.twig&#10;exa&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/ExamResult.php&#10;que&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/QuestionResult.php&#10;fill&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/fillExam.html.twig&#10;examRe&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;stu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;examre&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;examres&#9;null&#9;null&#10;re&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/ExamResult.php&#10;teach&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;vue&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/components/CreateQuestions.vue&#10;sele&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/components/SelectQuestions.vue&#10;app&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;ap.&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/assets/js/app.js&#10;bas&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/base.html.twig&#10;mutu&#9;null&#9;null&#10;repos&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Repository/ExamRepository.php&#10;securi&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/packages/security.yaml&#10;stude&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php&#10;index&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/index.html.twig&#10;single&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/templates/student/exams/singleExam.html.twig&#10;route&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/config/routes.yaml&#10;question&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/Entity/Question.php&#10;fixtu&#9;FILE&#9;file:///Users/Milan/Documents/Programovanie/www/school-system/src/DataFixtures/AppFixtures.php&#10;SecurityController&#9;FILE&#9;file:///Volumes/Blsty/Milan/documents/Programovanie/www/school-system/src/Controller/SecurityController.php&#10;he&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;createSubject&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/student/subjects/createSubject.html.twig&#10;create&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/createQuestions.html.twig&#10;list&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/teacher/questions/questionsList.html.twig&#10;teac&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/TeacherController.php&#10;header&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/templates/partials/header.html.twig&#10;st&#9;FILE&#9;file:///Users/milan/Documents/Programovanie/www/school-system/src/Controller/StudentController.php" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -512,20 +498,22 @@
       <workItem from="1538210751895" duration="427000" />
       <workItem from="1538222050877" duration="323000" />
       <workItem from="1538222975049" duration="583000" />
+      <workItem from="1539071285495" duration="1042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133650000" />
+    <option name="totallyTimeSpent" value="134873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21324718" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28513733" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.34560907" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3101983" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -550,20 +538,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/teacher/questions/questionsList.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teacher/questions/createQuestions.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="31" column="73" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/student/subjects/singleSubject.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -586,20 +560,8 @@
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/psr/container/src/ContainerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/ContainerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/psr/container/src/ContainerInterface.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/dependency-injection/ContainerInterface.php" />
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -651,26 +613,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="115" column="28" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/mutual/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/templates/student/exams/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="6" column="202" selection-start-line="6" selection-start-column="202" selection-end-line="6" selection-end-column="202" />
         </state>
       </provider>
     </entry>
@@ -765,34 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="103" selection-start-line="1" selection-start-column="103" selection-end-line="1" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/common/exams/studentsResults.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/common/exams/viewResults.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/app/AppKernel.php" />
     <entry file="file://$PROJECT_DIR$/config/routes.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
@@ -804,9 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,6 +739,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="115" column="28" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/exams/studentsResults.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/exams/viewResults.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
         </state>
       </provider>
     </entry>

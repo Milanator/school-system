@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ app.user.teacher == 1 ? path('teacher') : (app.user.teacher == 0) ? path('student') : path('login') }}">School system</a>
+    <a class="navbar-brand" href="{{ app.user and app.user.teacher == 1 ? path('teacher') : (app.user and app.user.teacher == 0 ) ? path('student') : path('login') }}">School system</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
