@@ -204,8 +204,8 @@ class TeacherController extends AbstractController {
             ->find($examId);
 
         $exam->removeQuestion($question);
-        $entityManager->persist($exam);
 
+        $entityManager->persist($exam);
         $entityManager->flush();
 
         return $this->redirectToRoute('questionsList', ['id' => $exam->getId()]);
@@ -322,8 +322,8 @@ class TeacherController extends AbstractController {
         $entityManager = $this->getDoctrine()->getManager();
 
         $exam->setActive($exam->getActive() == 1 ? 0 : 1);
-        $entityManager->persist($exam);
 
+        $entityManager->persist($exam);
         $entityManager->flush();
 
         return $this->redirectToRoute('exam', ['id' => $exam->getId()]);
@@ -331,7 +331,7 @@ class TeacherController extends AbstractController {
 
     public function studentsResults($id) {
 
-        $exam          = $this->getDoctrine()
+        $exam = $this->getDoctrine()
             ->getRepository(Exam::class)
             ->find($id);
 
@@ -341,9 +341,8 @@ class TeacherController extends AbstractController {
                 'exam' => $exam->getId()
             ]);
 
-
         return $this->render('common/exams/studentsResults.html.twig', [
-            'exam' => $exam,
+            'exam'        => $exam,
             'examResults' => $examResults
         ]);
     }

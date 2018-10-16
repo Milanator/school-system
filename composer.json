@@ -18,9 +18,9 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",
-        "symfony/dotenv": "*",
         "symfony/maker-bundle": "^1.7",
-        "symfony/profiler-pack": "^1.0"
+        "symfony/profiler-pack": "^1.0",
+        "symfony/dotenv": "*"
     },
     "config": {
         "preferred-install": {
@@ -52,7 +52,7 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "chmod -R ug+w $APP_DIR/var"
         ],
         "post-update-cmd": [
             "@auto-scripts"

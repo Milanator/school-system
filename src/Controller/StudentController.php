@@ -11,34 +11,36 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class StudentController extends AbstractController
-{
-    private function checkAddressee($exam, $userId){
+class StudentController extends AbstractController {
+    private function checkAddressee($exam, $userId) {
 
-        if( ! $exam->getActive() ){
+        if (!$exam->getActive()) {
             return false;
         }
-        if( $exam->getIntentedFor() != 0 && $exam->getIntentedFor() != $userId ){
+        if ($exam->getIntentedFor() != 0 && $exam->getIntentedFor() != $userId) {
             return false;
         }
+
         return true;
     }
 
-    public function index()
-    {
+    public function index() {
         return $this->render('student/index.html.twig');
     }
 
     public function fillExam($userId, $examId) {
 
-        $exam = $this->getDoctrine()
+        $exam       = $this->getDoctrine()
             ->getRepository(Exam::class)
             ->find($examId);
         $examIsDone = $this->getDoctrine()
             ->getRepository(ExamResult::class)
-            ->find($examId);
+            ->findBy([
+                'exam' => $examId,
+                'user' => $this->getUser()->getId()
+            ]);
 
-        if( ! $this->checkAddressee($exam, $userId) || $examIsDone ){
+        if (!$this->checkAddressee($exam, $userId) || $examIsDone) {
             return new Response('You do not have permission. ', 500);
         }
 
@@ -50,21 +52,25 @@ class StudentController extends AbstractController
     public function storeExamResults($examId) {
 
         $entityManager = $this->getDoctrine()->getManager();
-        $data = Request::createFromGlobals()->request;
-        $exam = $this->getDoctrine()
+        $data          = Request::createFromGlobals()->request;
+        $exam          = $this->getDoctrine()
             ->getRepository(Exam::class)
             ->find($examId);
-        $points = 0;
-        $user = $this->getUser();
-        $maxPoits = count($exam->getQuestions());
-        $examIsDone = $this->getDoctrine()
+        $points        = 0;
+        $user          = $this->getUser();
+        $maxPoints     = count($exam->getQuestions());
+        $examIsDone    = $this->getDoctrine()
             ->getRepository(ExamResult::class)
-            ->find($examId);
+            ->findBy([
+                'exam' => $examId,
+                'user' => $user->getId()
+            ]);
 
-        if( $examIsDone ){
+        if ($examIsDone) {
             return new Response('You do not have permission. ', 500);
         }
 
+        // EXAM RESULT
         $examResult = new ExamResult();
         $examResult->setUser($user);
         $examResult->setExam($exam);
@@ -74,24 +80,25 @@ class StudentController extends AbstractController
 
         $entityManager->persist($examResult);
 
-        foreach ( $exam->getQuestions() as $question ){
+        foreach ($exam->getQuestions() as $question) {
 
-            $questionId = $question->getId();
-            $studentAnswerId = $data->get('question'.$questionId);
+            $questionId      = $question->getId();
+            $studentAnswerId = $data->get('question' . $questionId);
 
-            if( !$studentAnswerId ){
+            if (!$studentAnswerId) {
                 continue;
             }
 
-            foreach ($question->getAnswers() as $answer){
+            foreach ($question->getAnswers() as $answer) {
 
-                if( $studentAnswerId != $answer->getId() ){
+                if ($studentAnswerId != $answer->getId()) {
                     continue;
                 }
 
                 $correct = false;
 
-                if($answer->getCorrect()){
+                // IF ANSWER IS CORRECT
+                if ($answer->getCorrect()) {
                     $correct = true;
                     $points++;
                 }
@@ -109,14 +116,13 @@ class StudentController extends AbstractController
             }
         }
 
-        $percentage = ($points != 0) ? ($points/$maxPoits)*100 : 0;
+        $percentage = ($points != 0) ? ($points / $maxPoints) * 100 : 0;
 
         $examResult->setCorrect($points);
-        $examResult->setIncorrect($maxPoits-$points);
+        $examResult->setIncorrect($maxPoints - $points);
         $examResult->setPercentage($percentage);
 
         $entityManager->persist($examResult);
-
         $entityManager->flush();
 
         return $this->redirectToRoute('exam', ['id' => $examId]);
